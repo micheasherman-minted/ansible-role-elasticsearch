@@ -11,4 +11,13 @@
     update_cache: yes
 
 - name: Install Elasticsearch.
-  apt: pkg=elasticsearch state=present
+  apt:
+    name: elasticsearch={{ es_version }}
+
+- name: Add init.d file for Elasticsearch.
+  template:
+    src: elasticsearch.j2
+    dest: /etc/init.d/elasticsearch
+    mode: 0755
+    force: yes
+  notify: restart elasticsearch
