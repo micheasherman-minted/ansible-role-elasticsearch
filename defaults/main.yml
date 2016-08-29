@@ -1,5 +1,19 @@
 ---
-elasticsearch_network_host: localhost
-elasticsearch_http_port: 9200
-elasticsearch_script_inline: true
-elasticsearch_script_indexed: true
+# /usr/share/elasticsearch
+es_version: "2.3.5"
+
+# /etc/init.d/elasticsearch
+es_heap_size: 2g
+
+# /etc/elasticsearch/elasticsearch.yml
+es_cluster_name: mycluster
+es_node_name: "{{ ansible_hostname }}"
+es_http_port: 9200
+es_network_host: localhost
+es_host_list: "[ localhost ]"
+es_min_master_nodes: 1
+es_node_master: "true"
+es_node_data: "true"
+
+# extra stuff you need goes here
+es_config: {}
