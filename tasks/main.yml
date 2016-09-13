@@ -5,6 +5,13 @@
 - include: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
+- name: Create Data Directory
+  file:
+    path: "{{ es_data_dir }}"
+    state: directory
+    owner: elasticsearch
+    group: elasticsearch
+
 - name: Configure Elasticsearch.
   template:
     src: elasticsearch.yml.j2

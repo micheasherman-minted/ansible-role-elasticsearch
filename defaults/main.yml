@@ -1,6 +1,6 @@
 ---
 # /usr/share/elasticsearch
-es_version: "2.3.5"
+es_version: "2.4.0"
 
 # /etc/init.d/elasticsearch
 es_heap_size: 2g
@@ -14,6 +14,8 @@ es_host_list: "[ localhost ]"
 es_min_master_nodes: 1
 es_node_master: "true"
 es_node_data: "true"
+es_data_dir: "/var/lib/elasticsearch"
+es_scripts: false
 
 # extra stuff you need goes here
 es_config: {}
