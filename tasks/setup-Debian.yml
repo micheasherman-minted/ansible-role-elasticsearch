@@ -8,11 +8,12 @@
   apt_repository:
     repo: 'deb http://packages.elastic.co/elasticsearch/2.x/debian stable main'
     state: present
-    update_cache: yes
 
 - name: Install Elasticsearch.
   apt:
     name: elasticsearch={{ es_version }}
+    update_cache: yes
+    cache_valid_time: 86400
 
 - name: Add init.d file for Elasticsearch.
   template:
