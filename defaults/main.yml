@@ -15,7 +15,5 @@ es_min_master_nodes: 1
 es_node_master: "true"
 es_node_data: "true"
 es_data_dir: "/var/lib/elasticsearch"
+es_max_clause_count: 1024
 es_scripts: false
-
-# extra stuff you need goes here
-es_config: {}

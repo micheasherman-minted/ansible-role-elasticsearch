@@ -14,14 +14,12 @@ node.data: {{ es_node_data }}
 
 path.data: {{ es_data_dir }}
 
+index.query.bool.max_clause_count: {{ es_max_clause_count }}
+
 {% if es_scripts %}
 script.inline: true
 script.indexed: true
 script.file: true
 script.update: false
 script.default_lang: python
-{% endif %}
-
-{% if es_config %}
-{{ es_config | to_nice_yaml }}
 {% endif %}
